@@ -84,5 +84,5 @@ resource "aws_networkfirewall_rule_group" "hcp-nia-fw-rg-sful-http" {
       }
     }
   }
-
+tags =local.common_tags
 }
