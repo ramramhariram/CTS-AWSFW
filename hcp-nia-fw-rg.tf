@@ -72,7 +72,7 @@ resource "aws_networkfirewall_rule_group" "hcp-nia-fw-rg-sful-http" {
         action = "PASS"
         header {
           destination      = "ANY"
-          destination_port = "80"
+          destination_port = "8080"
           direction        = "FORWARD"
           protocol         = "TCP"
           source           = "ANY"
