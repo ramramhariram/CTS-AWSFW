@@ -61,7 +61,7 @@ resource "aws_networkfirewall_rule_group" "hcp-nia-fw-rg-sful" {
   }
 
 }
-/*
+
 resource "aws_networkfirewall_rule_group" "hcp-nia-fw-rg-sful-http" {
   capacity = 1000
   name     = "hcp-nia-fw-rg-sful-http"
@@ -86,4 +86,3 @@ resource "aws_networkfirewall_rule_group" "hcp-nia-fw-rg-sful-http" {
   }
 
 }
-*/
