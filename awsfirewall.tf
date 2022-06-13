@@ -93,10 +93,10 @@ resource "aws_networkfirewall_firewall_policy" "hcp-nia-fw-policy" {
       #priority     = 255
       resource_arn = aws_networkfirewall_rule_group.hcp-nia-fw-rg-sful.arn
     }
-    stateful_rule_group_reference {
+    #stateful_rule_group_reference {
       #priority     = 255
-      resource_arn = aws_networkfirewall_rule_group.hcp-nia-fw-rg-sful-http.arn
-    }
+     # resource_arn = aws_networkfirewall_rule_group.hcp-nia-fw-rg-sful-http.arn
+    #}
     stateful_engine_options { 
       rule_order = "DEFAULT_ACTION_ORDER"
     }
