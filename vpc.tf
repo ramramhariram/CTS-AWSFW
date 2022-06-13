@@ -69,10 +69,6 @@ resource "aws_route_table" "publicrt" {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.igw.id
   }
-  route {
-    cidr_block           = "172.25.16.0/20"
-    vpc_peering_connection_id = "pcx-0ffe1c10f51a19a36"
-  }
   tags = merge (
     local.common_tags,
     {
