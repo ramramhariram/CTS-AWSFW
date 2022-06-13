@@ -46,7 +46,8 @@ output "caller_arn" {
 output "caller_user" {
   value = data.aws_caller_identity.current.user_id
 }
-
+/*
 output "aws_cts_public_ip" {
   value = aws_instance.cts.public_ip
 }
+*/

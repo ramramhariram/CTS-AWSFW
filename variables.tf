@@ -1,4 +1,4 @@
-variable "hvn_id" {
+/*variable "hvn_id" {
   description = "The ID of the HCP HVN."
   type        = string
   default     = "learn-hvn"
@@ -22,7 +22,8 @@ variable "cloud_provider" {
 
 variable HCP_CLIENT_SECRET {}
 variable HCP_CLIENT_ID {}
-
+*/
+  variable "region" {}
   variable "vpc_cidr_block" {}
   variable "consul_cidr_block1" {}
   variable "consul_cidr_block2" {}
@@ -33,7 +34,7 @@ variable HCP_CLIENT_ID {}
   variable "fw_cidr_block" {}
   
 #  variable "instance_type" {}
-  variable "key_name" {}
+  #variable "key_name" {}
 
   #variable "ami" {}
   #variable "instance_type_agents" {}

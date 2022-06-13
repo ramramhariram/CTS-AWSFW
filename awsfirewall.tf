@@ -39,11 +39,11 @@ resource "aws_route_table" "service_subnet" {
     #vpc_endpoint_id = aws_networkfirewall_firewall.hcp-nia-fw.firewall_status.sync_states.attachment.endpoint_id
     vpc_endpoint_id = element([for ss in tolist(aws_networkfirewall_firewall.hcp-nia-fw.firewall_status[0].sync_states) : ss.attachment[0].endpoint_id], 0)
   }
-  route {
-    cidr_block           = "172.25.16.0/20"
-    #network_interface_id = data.aws_network_interface.service_subnet.id
-    vpc_peering_connection_id = "pcx-0ffe1c10f51a19a36"
-  }
+ # route {
+  #  cidr_block           = "172.25.16.0/20"
+   # #network_interface_id = data.aws_network_interface.service_subnet.id
+    #vpc_peering_connection_id = "pcx-0ffe1c10f51a19a36"
+  #}
 
 }
 resource "aws_route_table_association" "service_subnet" {
