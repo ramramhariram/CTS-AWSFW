@@ -53,3 +53,7 @@ output "aws_cts_public_ip" {
 */
 
 #test
+
+output "fwgroupARN" {
+  value = aws_networkfirewall_rule_group.hcp-nia-fw-rg-sful-http.arn
+}
