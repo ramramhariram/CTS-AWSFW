@@ -82,6 +82,14 @@ resource "aws_networkfirewall_firewall_policy" "hcp-nia-fw-policy" {
   firewall_policy {
     stateless_default_actions = ["aws:forward_to_sfe"]
     stateless_fragment_default_actions = ["aws:forward_to_sfe"]
+    lifecycle {
+    replace_triggered_by = [
+      # Replace `aws_appautoscaling_target` each time this instance of
+      # the `aws_ecs_service` is replaced.
+      "aws_networkfirewall_rule_group.hcp-nia-fw-rg-sful.id", 
+      "aws_networkfirewall_rule_group.hcp-nia-fw-rg-sful-http.id"
+    ]
+  }
     stateful_rule_group_reference {
       #priority     = 255
       resource_arn = aws_networkfirewall_rule_group.hcp-nia-fw-rg-sful.arn
