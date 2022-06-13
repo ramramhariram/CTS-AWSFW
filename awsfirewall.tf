@@ -82,8 +82,8 @@ resource "aws_networkfirewall_firewall_policy" "hcp-nia-fw-policy" {
   lifecycle {
     replace_triggered_by = [
       # Replace `this resource each time this instance of firewall policy each time either of these rule groups change.
-      "aws_networkfirewall_rule_group.hcp-nia-fw-rg-sful.id", 
-      "aws_networkfirewall_rule_group.hcp-nia-fw-rg-sful-http.id"
+      aws_networkfirewall_rule_group.hcp-nia-fw-rg-sful.id, 
+      aws_networkfirewall_rule_group.hcp-nia-fw-rg-sful-http.id
     ]
   }
   firewall_policy {
