@@ -71,7 +71,7 @@ resource "aws_networkfirewall_rule_group" "hcp-nia-fw-rg-sful-http" {
       stateful_rule {
         action = "PASS"
         header {
-          destination      = "10.1.10.43/32"
+          destination      = "ANY"
           destination_port = "80"
           direction        = "FORWARD"
           protocol         = "TCP"
