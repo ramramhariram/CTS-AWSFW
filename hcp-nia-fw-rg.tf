@@ -84,5 +84,10 @@ resource "aws_networkfirewall_rule_group" "hcp-nia-fw-rg-sful-http" {
       }
     }
   }
-tags =local.common_tags
+tags = merge (
+    local.common_tags,
+    {
+      hc-internet-facing = true    
+    },
+  )
 }
